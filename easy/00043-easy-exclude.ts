@@ -1,5 +1,5 @@
 // ============= Test Cases =============
-import type { Equal, Expect } from "./test-utils";
+import type { Equal, Expect } from "../test-utils";
 
 type cases = [
   Expect<Equal<MyExclude<"a" | "b" | "c", "a">, Exclude<"a" | "b" | "c", "a">>>,
@@ -18,6 +18,6 @@ type cases = [
 ];
 
 // ============= Your Code Here =============
-type MyExclude<T, U> = T extends U ? never : T;
+export type MyExclude<T, U> = T extends U ? never : T;
 
 type A = MyExclude<'a'|'b'|'c','a'>
