@@ -25,7 +25,7 @@ function crossMerge(sourceArr, keyName, valueName, onItem = (item) => item) {
         if (rest.length) {
           return _crossMerge(rest, currRow)
         }/*  */
-        return currRow
+        return onItem(currRow)
       })
     )
   }
