@@ -13,7 +13,7 @@ let variants = [
   },
 ]
 /**
- * todo:TS类型编写
+ * todo: 交叉合并
  */
 function crossMerge(sourceArr, keyName, valueName, onItem = (item) => item) {
   const _crossMerge = ([first, ...rest], row = {}) => {
@@ -24,7 +24,7 @@ function crossMerge(sourceArr, keyName, valueName, onItem = (item) => item) {
         const currRow = { ...row, [name]: variantItem }
         if (rest.length) {
           return _crossMerge(rest, currRow)
-        }/*  */
+        }
         return onItem(currRow)
       })
     )
